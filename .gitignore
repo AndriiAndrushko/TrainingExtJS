@@ -5,7 +5,6 @@ build
 ext
 overrides
 packages
-resources
 sass
 bootstrap.css
 bootstrap.js
