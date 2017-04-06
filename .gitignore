@@ -1,0 +1,15 @@
+#Folders
+.idea
+.sencha
+build
+ext
+overrides
+packages
+resources
+sass
+bootstrap.css
+bootstrap.js
+bootstrap.json
+bootstrap.jsonp
+build.xml
+workspace.json
