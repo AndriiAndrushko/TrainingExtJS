@@ -8,6 +8,9 @@ Ext.define('Application.model.SchoolTree',{
 	            {
 	                name: 'leaf',
 	                type: 'bool'
+	            },
+	            { name:'userID',
+	           	 type: 'string'
 	            }
 		]
 	

@@ -5,6 +5,9 @@ Ext.define('Application.view.main.SchoolTree', {
     flex: 0.2,
     region: 'west',
     margin: '5 5 5 5', 
+    listeners: {
+        itemclick: 'changeScores'
+    },
     store: {
             root: {
             text: 'School',

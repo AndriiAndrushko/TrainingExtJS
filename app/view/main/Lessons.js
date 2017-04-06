@@ -1,47 +1,53 @@
 Ext.define('LessonsModel', {
-
+	
     extend: 'Ext.data.Model',
+
     fields: [ 'name', 'email', 'phone' ]
 
 });
 
 Ext.define('Application.view.main.Lessons', {
-	renderTo: document.body,
-	store: Ext.create('Ext.data.Store', {
-			    model: 'LessonsModel',
-			    proxy:{
-			    	type: 'ajax',
-			    	url: 'resources/lessons.json',
-			    	reader: {
-			    		type: 'json',
-			    		rootProperty: 'data'
-			    	}
-			    },
-			    autoLoad: true
-			}),
-    extend: 'Ext.grid.Panel',
+	extend: 'Ext.grid.Panel',
+	store: {
+            storeID: 'lessonsstore',
+			model: 'LessonsModel',
+			proxy:{
+				type: 'ajax',
+				url: 'resources/lessons.json',
+				reader: {
+					type: 'json',
+					rootProperty: 'data.user2',
+					 keepRawData: true
+
+					    }
+					},
+			autoLoad: true
+			},
     xtype: 'main-lessons',
     title:'Lessons',
+    listeners: {
+    	  itemclick: 'onTreeItemClick'
+    },
 	columns: [
 		        {
-		            text: 'Name',
+		            text: 'Lessons',
 		            dataIndex: 'lessons',
 		            flex: .3
 		        },
 		        {
-		            text: 'Email Address',  
+		            text: 'Score',  
 		            dataIndex: 'score',
 		            flex: .3
 		           
 		        },
 		        {
-		            text: 'Phone Number',   
+		            text: 'Need Improvement',   
 		            dataIndex: 'needImprovement',
 		            flex: .3
 		        }
 		    ],
     region: 'center',
    	flex: 0.8,
-
-    margin: '5 5 5 5'
+    margin: '5 5 5 5',
+    renderTo: Ext.getBody()
 })
