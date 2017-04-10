@@ -17,19 +17,15 @@ Ext.define('Application.view.main.MainController', {
             //
         }
     },
-    onTreeItemClick: function(record){
-         debugger
-        },
-    changeScores: function(record, node) {
-            var isLeaf =node.isLeaf();
-            var text= node.data.text;
-            var id = node.data.userID;
-            var dinamicProp='data.'+id;
+    init :function() {
+         this.getView().query('main-lessons')[0].getStore().filter('userID', 'user1')
+    },
+    onNameClick: function(record, node){
+        var userID = node.data.userID;
+        var isLeaf =node.isLeaf()
+        console.log(userID)
             if(isLeaf){
-                this.getView().query('main-lessons')[0].getStore().getProxy().reader.config.rootProperty = dinamicProp;
-                this.getView().query('main-lessons')[0].getStore().save();
-                // console.log(isLeaf, text,id , this.getView().query('main-lessons')[0].getStore().getProxy().reader.config.rootProperty);       
+                this.getView().query('main-lessons')[0].getStore().filter('userID',userID);
             }
-            console.log(this.getView().query('main-lessons')[0].getStore().getProxy().reader.config.rootProperty);
-    }
-});
+        }
+  });

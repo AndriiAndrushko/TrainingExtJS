@@ -1,55 +1,47 @@
 {
     "success" : true,
-    "data" : {
-        "user1":
-            [ {"lessons": 'Biology',               "score": 0,  "needImprovement": false},
-             {"lessons": 'Chemistry',             "score": 2,   "needImprovement": true},
-             {"lessons": 'Environmental Science', "score": 1,  "needImprovement": false},
-             {"lessons": 'Geometry',              "score": 11,  "needImprovement": false},
-             {"lessons": 'World History',         "score": 10,  "needImprovement": false}
-            ],
-            "user2":
-            [ {"lessons": 'Biology',               "score": 12,  "needImprovement": false},
-             {"lessons": 'Chemistry',             "score": 9,   "needImprovement": true},
-             {"lessons": 'Environmental Science', "score": 17,  "needImprovement": false},
-             {"lessons": 'Geometry',              "score": 151,  "needImprovement": false},
-             {"lessons": 'World History',         "score": 10,  "needImprovement": false}
-            ],
-            "user3":
-            [ {"lessons": 'Biology',               "score": 12,  "needImprovement": false},
-             {"lessons": 'Chemistry',             "score": 9,   "needImprovement": true},
-             {"lessons": 'Environmental Science', "score": 10,  "needImprovement": false},
-             {"lessons": 'Geometry',              "score": 11,  "needImprovement": false},
-             {"lessons": 'World History',         "score": 10,  "needImprovement": false}
-            ],
-            "user3":
-            [ {"lessons": 'Biology',               "score": 12,  "needImprovement": false},
-             {"lessons": 'Chemistry',             "score": 9,   "needImprovement": true},
-             {"lessons": 'Environmental Science', "score": 10,  "needImprovement": false},
-             {"lessons": 'Geometry',              "score": 11,  "needImprovement": false},
-             {"lessons": 'World History',         "score": 10,  "needImprovement": false}
-            ],
-            "user4":
-            [ {"lessons": 'Biology',               "score": 12,  "needImprovement": false},
-             {"lessons": 'Chemistry',             "score": 9,   "needImprovement": true},
-             {"lessons": 'Environmental Science', "score": 10,  "needImprovement": false},
-             {"lessons": 'Geometry',              "score": 11,  "needImprovement": false},
-             {"lessons": 'World History',         "score": 10,  "needImprovement": false}
-            ],
-            "user5":
-            [ {"lessons": 'Biology',               "score": 12,  "needImprovement": false},
-             {"lessons": 'Chemistry',             "score": 9,   "needImprovement": true},
-             {"lessons": 'Environmental Science', "score": 10,  "needImprovement": false},
-             {"lessons": 'Geometry',              "score": 11,  "needImprovement": false},
-             {"lessons": 'World History',         "score": 10,  "needImprovement": false}
-            ],
-            "user6":
-            [ {"lessons": 'Biology',               "score": 12,  "needImprovement": false},
-             {"lessons": 'Chemistry',             "score": 9,   "needImprovement": true},
-             {"lessons": 'Environmental Science', "score": 10,  "needImprovement": false},
-             {"lessons": 'Geometry',              "score": 11,  "needImprovement": false},
-             {"lessons": 'World History',         "score": 10,  "needImprovement": false}
-            ],
+    "data" : [
+             {"lessons": "Biology",               "userID":"user1", "score": 0,   "needImprovement": false},
+             {"lessons": "Chemistry",             "userID":"user1", "score": 2,   "needImprovement": true},
+             {"lessons": "Environmental Science", "userID":"user1", "score": 1,   "needImprovement": false},
+             {"lessons": "Geometry",              "userID":"user1", "score": 11,  "needImprovement": false},
+             {"lessons": "World History",         "userID":"user1", "score": 10,  "needImprovement": false},
+                   
+             {"lessons": "Biology",               "userID":"user2", "score": 12,  "needImprovement": false},
+             {"lessons": "Chemistry",             "userID":"user2", "score": 9,   "needImprovement": true},
+             {"lessons": "Environmental Science", "userID":"user2", "score": 17,  "needImprovement": false},
+             {"lessons": "Geometry",              "userID":"user2", "score": 151,  "needImprovement": false},
+             {"lessons": "World History",         "userID":"user2", "score": 10,  "needImprovement": false},
+          
+             {"lessons": "Biology",               "userID":"user3", "score": 12,  "needImprovement": false},
+             {"lessons": "Chemistry",             "userID":"user3", "score": 9,   "needImprovement": true},
+             {"lessons": "Environmental Science", "userID":"user3", "score": 10,  "needImprovement": false},
+             {"lessons": "Geometry",              "userID":"user3", "score": 11,  "needImprovement": false},
+             {"lessons": "World History",         "userID":"user3", "score": 10,  "needImprovement": false},
+             
+             {"lessons": "Biology",               "userID":"user4", "score": 12,  "needImprovement": false},
+             {"lessons": "Chemistry",             "userID":"user4", "score": 9,   "needImprovement": true},
+             {"lessons": "Environmental Science", "userID":"user4", "score": 10,  "needImprovement": false},
+             {"lessons": "Geometry",              "userID":"user4", "score": 11,  "needImprovement": false},
+             {"lessons": "World History",         "userID":"user4", "score": 10,  "needImprovement": false},
+             
+             {"lessons": "Biology",               "userID":"user5", "score": 12,  "needImprovement": false},
+             {"lessons": "Chemistry",             "userID":"user5", "score": 9,   "needImprovement": true},
+             {"lessons": "Environmental Science", "userID":"user5", "score": 10,  "needImprovement": false},
+             {"lessons": "Geometry",              "userID":"user5", "score": 11,  "needImprovement": false},
+             {"lessons": "World History",         "userID":"user5", "score": 10,  "needImprovement": false},
+           
+             {"lessons": "Biology",              "userID":"user6", "score": 12,  "needImprovement": false},
+             {"lessons": "Chemistry",             "userID":"user6", "score": 9,   "needImprovement": true},
+             {"lessons": "Environmental Science", "userID":"user6", "score": 10,  "needImprovement": false},
+             {"lessons": "Geometry",              "userID":"user6", "score": 11,  "needImprovement": false},
+             {"lessons": "World History",         "userID":"user6", "score": 10,  "needImprovement": false},
+         
+             {"lessons": "Biology",              "userID":"user7", "score": 12,  "needImprovement": false},
+             {"lessons": "Chemistry",             "userID":"user7", "score": 9,   "needImprovement": true},
+             {"lessons": "Environmental Science", "userID":"user7", "score": 10,  "needImprovement": false},
+             {"lessons": "Geometry",              "userID":"user7", "score": 11,  "needImprovement": false},
+             {"lessons": "World History",         "userID":"user8", "score": 10,  "needImprovement": false}
+      ]
 
-    }
 }

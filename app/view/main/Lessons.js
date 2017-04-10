@@ -16,7 +16,7 @@ Ext.define('Application.view.main.Lessons', {
 				url: 'resources/lessons.json',
 				reader: {
 					type: 'json',
-					rootProperty: 'data.user2',
+					rootProperty: 'data',
 					 keepRawData: true
 
 					    }
@@ -25,9 +25,6 @@ Ext.define('Application.view.main.Lessons', {
 			},
     xtype: 'main-lessons',
     title:'Lessons',
-    listeners: {
-    	  itemclick: 'onTreeItemClick'
-    },
 	columns: [
 		        {
 		            text: 'Lessons',
