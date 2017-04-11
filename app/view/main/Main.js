@@ -11,7 +11,6 @@ Ext.define('Application.view.main.Main', {
 
     requires: [
         'Ext.plugin.Viewport',
-        // 'Application.model.Lessons',
         'Application.view.main.MainController',
         'Application.view.main.MainModel',
         'Application.view.main.SchoolTree',

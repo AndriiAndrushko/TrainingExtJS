@@ -18,14 +18,22 @@ Ext.define('Application.view.main.MainController', {
         }
     },
     init :function() {
-         this.getView().query('main-lessons')[0].getStore().filter('userID', 'user1')
+        this.getView().query('main-lessons')[0].getStore().filter('userID', 'user1');
+        
+        var firstItem = this.getView().query('main-lessons')[0];
+            firstItem.store.load(function(records, operation, success){
+            firstItem.getSelectionModel().select(0, true);
+        })
     },
     onNameClick: function(record, node){
         var userID = node.data.userID;
         var isLeaf =node.isLeaf()
-        console.log(userID)
-            if(isLeaf){
-                this.getView().query('main-lessons')[0].getStore().filter('userID',userID);
+        if(isLeaf){
+            var firstItem = this.getView().query('main-lessons')[0];
+            firstItem.store.load(function(records, operation, success){
+                firstItem.getSelectionModel().select(0, true);
+                })
+            this.getView().query('main-lessons')[0].getStore().filter('userID',userID);
             }
         }
   });
