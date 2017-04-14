@@ -3,6 +3,7 @@ Ext.define('Application.view.main.SchoolTree', {
     xtype: 'main-schoolTree',
     title: 'School Tree',
     flex: 0.2,
+
     region: 'west',
     margin: '5 5 5 5', 
     listeners: {

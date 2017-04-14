@@ -26,6 +26,6 @@ Ext.define('Application.view.main.Main', {
         xtype: 'main-schoolTree'
     },
         {
-        xtype: 'main-lessons'
+        xtype: 'main-lessons',
     }]
 });

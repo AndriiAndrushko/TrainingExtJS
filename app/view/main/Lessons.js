@@ -25,6 +25,20 @@ Ext.define('Application.view.main.Lessons', {
 			},
     xtype: 'main-lessons',
     title:'Lessons',
+    buttons: [
+    {
+	    text:"Select All ",
+	    handler: 'selsectAllButton',
+	    flex: 0.1
+	 },{
+	    text:"Unselsect All",
+	    handler: 'unSelsectAllButton',
+	     	flex: 0.1
+	},{
+	    text:"Inverse",
+	    handler: 'inverseSelections',
+	     	flex: 0.1
+	}],
 	columns: [
 		        {
 		            text: 'Lessons',
@@ -41,10 +55,12 @@ Ext.define('Application.view.main.Lessons', {
 		            text: 'Need Improvement',   
 		            dataIndex: 'needImprovement',
 		            flex: .3
-		        }
-		    ],
+		        }   
+		     ],
     region: 'center',
-   	flex: 0.8,
     margin: '5 5 5 5',
+    listeners: {
+        itemclick: 'clickOnItem'
+    },
     renderTo: Ext.getBody()
 })
