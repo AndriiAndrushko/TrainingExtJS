@@ -14,27 +14,36 @@ Ext.define('Application.view.main.MainController', {
         if (choice === 'yes') {
         }
     },
-    init :function() {
-        this.getView().query('main-lessons')[0].getStore().filter('userID', 'user1');    
+    init :function(){
+         Ext.state.Manager.setProvider(new Ext.state.CookieProvider({
+            expires : new Date(Ext.Date.now() + (1000*60*60*24*90)) // 90 days
+        }));
+        
+        this.getView().query('main-lessons')[0].getStore().filter('userID', 'user1');  
+
         var lessonsGrid = this.getView().query('main-lessons')[0];
             lessonsGrid.getSelectionModel().selectionMode = "MULTI";
             lessonsGrid.store.load(function(records, operation, success){
-            lessonsGrid.getSelectionModel().select(0, true); 
+            Ext.state.Manager.get('selectedItems').forEach(function(elem){
+                lessonsGrid.getSelectionModel().select(elem, true)
+            })
         })
     },
+    
     selsectAllButton: function(){
         var lessonsGrid = this.getView().query('main-lessons')[0];
         lessonsGrid.selModel.selectionMode = "MULTI";
         lessonsGrid.getSelectionModel().selectAll(true);
     },
+
     unSelsectAllButton: function(){
         var lessonsGrid = this.getView().query('main-lessons')[0];
             lessonsGrid.getSelectionModel().deselectAll(true);
     },
+
     inverseSelections: function(records){
         var lessonsGrid = this.getView().query('main-lessons')[0];
-        var quantityofElements = lessonsGrid.getSelectionModel().getStore().getCount()
-       
+        var quantityofElements = lessonsGrid.getSelectionModel().getStore().getCount();
         for (var i=0; i<=quantityofElements; i++){
                 var isSelected = lessonsGrid.getSelectionModel().isSelected(i);
                 if(isSelected==true){
@@ -44,19 +53,29 @@ Ext.define('Application.view.main.MainController', {
                 }
         }
     },
-    clickOnItem: function (record) {
-        var r = record;
-        debugger
+
+    clickOnLesson: function (record) {
+        var lessonsGrid = this.getView().query('main-lessons')[0];
+        var selected = lessonsGrid.getSelectionModel().selected.length;
+        var quantityofElements = lessonsGrid.getSelectionModel().getStore().getCount();
+        var selectedItemsarray=[];
+        for (var i=0; i<=quantityofElements; i++){
+                var isSelected = lessonsGrid.getSelectionModel().isSelected(i);
+                if(isSelected==true){
+                   selectedItemsarray.push(i);
+                }
+        }
+        Ext.state.Manager.set('selectedItems', selectedItemsarray);
     },
+
     onNameClick: function(record, node){
         var userID = node.data.userID;
-        var isLeaf =node.isLeaf()
+        var isLeaf =node.isLeaf();
         if(isLeaf){
             var lessonsGrid = this.getView().query('main-lessons')[0];
             lessonsGrid.store.load(function(records, operation, success){
                 lessonsGrid.getSelectionModel().select(0, true);
                 })
-            this.getView().query('main-lessons')[0].getStore().filter('userID',userID);
             }
         }
   });

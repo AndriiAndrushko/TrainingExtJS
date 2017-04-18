@@ -8,6 +8,8 @@ Ext.define('LessonsModel', {
 
 Ext.define('Application.view.main.Lessons', {
 	extend: 'Ext.grid.Panel',
+	stateful:true,
+    stateId:'lessons_grid_score',
 	store: {
             storeID: 'lessonsstore',
 			model: 'LessonsModel',
@@ -60,7 +62,7 @@ Ext.define('Application.view.main.Lessons', {
     region: 'center',
     margin: '5 5 5 5',
     listeners: {
-        itemclick: 'clickOnItem'
+        itemclick: 'clickOnLesson'
     },
     renderTo: Ext.getBody()
 })
