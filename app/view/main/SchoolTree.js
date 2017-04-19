@@ -9,6 +9,14 @@ Ext.define('Application.view.main.SchoolTree', {
     listeners: {
         itemclick: 'onNameClick'
     },
+     buttons: [
+    {
+        text:"Edit ",
+        handler: 'selsectAllButton',
+        // flex: 0.1,
+        width: '150px',
+        region: 'east'
+     }],
     store: {
             root: {
             text: 'School',
