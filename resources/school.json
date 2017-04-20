@@ -4,17 +4,33 @@
                     "text": "Angular",
                      "expanded": true,
                      "children": [
-                        {
+                        {   
+                            "firstName": "Misko",
+                            "lastName": "Hevery",
+                            "email": "hatedirtycode@gmail.com",
+                            "age": "12",
+                            "birthDay": "I/have/noIdea",
                             "text": "Misko Hevery",
                             "userID" : "user1",
                             "leaf": true
                         },
                           {
+
+                            "firstName": "Jhon",
+                            "lastName": "Papa",
+                            "email": "hairsucks@gmail.com",
+                            "age": "15",
+                            "birthDay": "I/have/noIdea",
                             "text": "Jhon Papa",
                             "userID": "user2",
                             "leaf": true
                         },
-                          {
+                          { 
+                            "firstName": "Todd",
+                            "lastName": "Moto",
+                            "email": "botmakescode@gmail.com",
+                            "age": "13",
+                            "birthDay": "I/have/noIdea",
                             "text": "Todd Moto",
                              "userID" : "user3",
                             "leaf": true
@@ -23,20 +39,34 @@
                 },
                 {
                     "text": "FaceBook",
-                     "expanded": true,
+                    "expanded": true,
                     "children": [
-                      
-                         {
+                        { 
+                          "firstName": "Andrew",
+                            "lastName": "McCollum",
+                            "email": "reactrocks@facabookinc.com",
+                            "age": "10",
+                            "birthDay": "I/have/noIdea",
                             "text": "Andrew McCollum",
-                             "userID" : "user4",
+                            "userID" : "user4",
                             "leaf": true
                         },
-                         {
+                         { 
+                            "firstName": "Mark",
+                            "lastName": "Zuckerberg",
+                            "email": "asianslover@facabookinc.com",
+                            "age": "12",
+                            "birthDay": "I/have/noIdea",
                             "text": "Mark Zuckerberg ",
-                             "userID" : "user5",
+                            "userID" : "user5",
                             "leaf": true
                         },
                            {
+                            "firstName": "Dustin",
+                            "lastName": "Moskovitz",
+                            "email": "virtualdom@facabookinc.com",
+                            "age": "12",
+                            "birthDay": "I/have/noIdea",
                             "text": "Dustin Moskovitz",
                              "userID" : "user6",
                             "leaf": true
@@ -47,16 +77,31 @@
                     "text": " Twitter",
                     "expanded": true,
                     "children": [
-                        {
+                        {   
+                            "firstName": "Evan",
+                            "lastName": "Williams",
+                            "email": "evanshmevan@twit.com",
+                            "age": "11",
+                            "birthDay": "I/have/noIdea",
                             "text": "Evan Williams",
                              "userID" : "user7",
                             "leaf": true
                         },
-                        {
+                        {   
+                            "firstName": "Noah",
+                            "lastName": "Glass",
+                            "email": "stealballs@twit.com",
+                            "age": "9",
+                            "birthDay": "I/have/noIdea",
                             "text": "Noah Glass",
                              "userID" : "user8",
                             "leaf": true
-                        },{
+                        },{ 
+                            "firstName": "Biz",
+                            "lastName": "Stone",
+                            "email": "stoneinpans@twit.com",
+                            "age": "9",
+                            "birthDay": "I/have/noIdea",
                             "text": "Biz Stone",
                             "userID" : "user9",
                             "leaf": true

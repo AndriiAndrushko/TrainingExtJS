@@ -1,3 +1,24 @@
+// Ext.define('Application.view.main.EditUserForm',{
+//     extend: 'Ext.form.Panel',
+//     xtype: 'edit-form',
+//     items: [
+//         {
+//             // xtype: 'textfield',
+//             name: 'name',
+//             label: 'Name'
+//         },
+//         {
+//             // xtype: 'emailfield',
+//             // name: 'email',
+//             label: 'Email'
+//         },
+//         {
+//             // xtype: 'passwordfield',
+//             // name: 'password',
+//             label: 'Password'
+//         }
+//     ]
+// }),
 Ext.define('Application.view.main.SchoolTree', {
     extend: 'Ext.tree.Panel',
     xtype: 'main-schoolTree',
@@ -12,11 +33,12 @@ Ext.define('Application.view.main.SchoolTree', {
      buttons: [
     {
         text:"Edit ",
-        handler: 'selsectAllButton',
+        handler: 'editButton',
         // flex: 0.1,
         width: '150px',
         region: 'east'
      }],
+    editing:true,
     store: {
             root: {
             text: 'School',
