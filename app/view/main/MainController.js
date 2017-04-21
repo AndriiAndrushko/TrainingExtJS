@@ -7,13 +7,6 @@
 Ext.define('Application.view.main.MainController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.main',
-    onItemSelected: function (sender, record) {
-        Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
-    },
-    onConfirm: function (choice) {
-        if (choice === 'yes') {
-        }
-    },
 
     init :function(){
          Ext.state.Manager.setProvider(new Ext.state.CookieProvider());        
@@ -25,7 +18,6 @@ Ext.define('Application.view.main.MainController', {
                 schoolTree.getSelectionModel().select(Ext.state.Manager.get('selectedItems.schoolTree'),true);// select first Element in tree
                 Ext.state.Manager.get('selectedItems.lessonsGrid').forEach(function(elem){
                     lessonsGrid.getSelectionModel().select(elem, true);
-
                 })
         })
     },
@@ -44,7 +36,7 @@ Ext.define('Application.view.main.MainController', {
             Ext.state.Manager.set('selectedItems.lessonsGrid', selectedItemsArray);
     },
 
-     storeTreeMark: function(){
+    storeTreeMark: function(){
         var schoolTree = this.getView().query('main-schoolTree')[0];
             var quantityofElements = schoolTree.getSelectionModel().getStore().getCount();
             for (var i=0; i<=quantityofElements; i++){
@@ -56,7 +48,7 @@ Ext.define('Application.view.main.MainController', {
             } 
     },
 
-    selsectAllButton: function(){
+    selectAllButton: function(){
         var lessonsGrid = this.getView().query('main-lessons')[0];
         lessonsGrid.selModel.selectionMode = "MULTI";
         lessonsGrid.getSelectionModel().selectAll(true);
@@ -69,7 +61,7 @@ Ext.define('Application.view.main.MainController', {
         this.storeGridMarks()
     },
 
-    inverseSelections: function(){
+    inverseSelectionsButton: function(){
         var lessonsGrid = this.getView().query('main-lessons')[0];
         var quantityofElements = lessonsGrid.getSelectionModel().getStore().getCount();
         for (var i=0; i<=quantityofElements; i++){
@@ -86,6 +78,7 @@ Ext.define('Application.view.main.MainController', {
     clickOnLesson: function () {
        this.storeGridMarks()
     },
+
     editButton: function(){
         var selectedItem = this.getView().query('main-schoolTree')[0].getSelectionModel().selected.items[0].data;
         var schoolTree = this.getView().query('main-schoolTree')[0];
@@ -100,72 +93,108 @@ Ext.define('Application.view.main.MainController', {
                     extend: 'Ext.form.FormPanel',
                     xtype: 'form',
                     items:[
-                    {   id: 'firstName',
-                        xtype:'textfield',
-                        fieldLabel: 'First Name',
-                        value: selectedItem.firstName,
-                    },
-                     {  
-                        xtype:'textfield',
-                        id: 'lastName',
-                        fieldLabel: 'Last Name',
-                        value: selectedItem.lastName
+                            {   
+                                id: 'firstName',
+                                xtype:'textfield', 
+                                fieldLabel: 'First Name',
+                                value: selectedItem.firstName,
+                                validator : function(firstName){
+                                    if(firstName.length>2){
+                                        return true
+                                    }else{
+                                        return 'Type your fuckin Name!'
+                                    }
+                                }                               
+                            },{  
+                                xtype:'textfield',
+                                id: 'lastName',
+                                fieldLabel: 'Last Name',
+                                value: selectedItem.lastName,
+                                validator : function(lastName){
+                                    if(lastName.length>2){
+                                        return true
+                                    }else{
+                                        return '"'+lastName+'"' + '- what? Are you stupid? Too short'
+                                    }
+                                }
 
-                    },
-                     {  
-                        id: 'email',
-                        xtype:'textfield',
-                        fieldLabel: 'Email',
-                        value: selectedItem.email
+                            },{  
+                                id: 'email',
+                                xtype:'textfield',
+                                vtype: 'email',
+                                allowBlank: false,
+                                fieldLabel: 'Email',
+                                value: selectedItem.email
 
-                    },
-                    {   id: 'age',
-                        xtype:'textfield',
-                        fieldLabel: 'Age',
-                        value: selectedItem.age
+                            },{   
+                                id: 'age',
+                                xtype:'numberfield',
+                                fieldLabel: 'Age',
+                                value: selectedItem.age,
+                                validator : function(age){
+                                    if((Math.round(age) == age) && age>1 ){
+                                        return true
+                                    }else{
+                                        return 'Oh God, type real age!'
+                                    }
+                                }
 
-                    },
-                    {   
-                        id: 'birthDay',
-                        xtype:'textfield',
-                        fieldLabel: 'Birthday',
-                        value: selectedItem.birthDay
-                    }
-                ]
-                }],      
+                            },{   
+                                id: 'birthDay',
+                                xtype:'datefield',
+                                fieldLabel: 'Birthday',
+                                value: selectedItem.birthDay,
+                                maxValue : new Date(),
+                                validator : function(birthday){                        
+                                    var choosenDate = new Date(JSON.stringify(birthday)).toLocaleDateString();
+                                    if(choosenDate === new Date().toLocaleDateString()){
+                                        return 'Wrong!' 
+                                    }else{
+                                        return true
+                                    }
+                                }
+                            },{   
+                                id: 'phone',
+                                xtype:'textfield', 
+                                fieldLabel: 'Phone',
+                                value: selectedItem.phone,
+                                regex: /^\d{3}-\d{3}-\d{4}$/,
+                                allowBlank: false                             
+                            }
+                        ]
+                        }],      
                 buttons: [{
-                    text: 'save',
-                    handler: function(button){
-                        var formFields =  button.up().up().down('form').getForm().getFields();
-                        var userToEdit = schoolTree.getStore().data.find('userID',selectedItem.userID).data;
-                            userToEdit.firstName = formFields.get('firstName').value;
-                            userToEdit.lastName = formFields.get('lastName').value;
-                            userToEdit.email = formFields.get('email').value;
-                            userToEdit.age = formFields.get('age').value;
-                            userToEdit.text = formFields.get('firstName').value + ' ' + formFields.get('lastName').value;
-
-                        schoolTree.getView().refresh(); 
-                        editForm.close() 
-                        } 
-                },
-                {
-                    text: 'cancel',
-                    handler: function(button){
-                     
-                        editForm.close()
-                        } 
-                }]        
+                            text: 'save',
+                            handler: function(button){
+                                var formFields =  button.up().up().down('form').getForm().getFields();
+                                var userToEdit = schoolTree.getStore().data.find('userID',selectedItem.userID).data;
+                                userToEdit.firstName = formFields.get('firstName').value;
+                                userToEdit.lastName = formFields.get('lastName').value;
+                                userToEdit.email = formFields.get('email').value;
+                                userToEdit.age = formFields.get('age').value;
+                                userToEdit.text = formFields.get('firstName').value + ' ' + formFields.get('lastName').value;
+                                userToEdit.birthDay = formFields.get('birthDay').value;
+                                schoolTree.getView().refresh(); 
+                                editForm.close();
+                            } 
+                        },{
+                            text: 'cancel',
+                            handler: function(button){
+                                editForm.close()
+                            } 
+                        }]        
             });
     editForm.show()
     },
+
     onNameClick: function(record, node){
         var userID = node.data.userID;
         var isLeaf =node.isLeaf();
         if(isLeaf){
             var lessonsGrid = this.getView().query('main-lessons')[0];
             lessonsGrid.store.load(function(records, operation, success){
-                    lessonsGrid.getSelectionModel().select(0, true);
-                })
+                lessonsGrid.getSelectionModel().select(0, true);
+            })
             this.storeTreeMark();
             this.getView().query('main-lessons')[0].getStore().filter('userID',userID);
             }

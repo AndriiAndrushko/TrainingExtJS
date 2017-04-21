@@ -9,9 +9,10 @@
                             "lastName": "Hevery",
                             "email": "hatedirtycode@gmail.com",
                             "age": "12",
-                            "birthDay": "I/have/noIdea",
+                            "birthDay": "2000-07-04",
                             "text": "Misko Hevery",
                             "userID" : "user1",
+                            "phone" : "097-123-2134",
                             "leaf": true
                         },
                           {
@@ -20,9 +21,10 @@
                             "lastName": "Papa",
                             "email": "hairsucks@gmail.com",
                             "age": "15",
-                            "birthDay": "I/have/noIdea",
+                            "birthDay": "2013-04-24",
                             "text": "Jhon Papa",
-                            "userID": "user2",
+                            "userID": "2",
+                            "phone" : "097 123 21 34",
                             "leaf": true
                         },
                           { 
@@ -30,9 +32,10 @@
                             "lastName": "Moto",
                             "email": "botmakescode@gmail.com",
                             "age": "13",
-                            "birthDay": "I/have/noIdea",
+                            "birthDay": "2011-11-21",
                             "text": "Todd Moto",
-                             "userID" : "user3",
+                            "userID" : "user3",
+                            "phone" : "097 123 21 34",
                             "leaf": true
                         }
                     ]
@@ -46,9 +49,10 @@
                             "lastName": "McCollum",
                             "email": "reactrocks@facabookinc.com",
                             "age": "10",
-                            "birthDay": "I/have/noIdea",
+                            "birthDay": "1999-11-21",
                             "text": "Andrew McCollum",
                             "userID" : "user4",
+                            "phone" : "097-1232-1-34",
                             "leaf": true
                         },
                          { 
@@ -56,9 +60,10 @@
                             "lastName": "Zuckerberg",
                             "email": "asianslover@facabookinc.com",
                             "age": "12",
-                            "birthDay": "I/have/noIdea",
+                            "birthDay": "1997-08-01",
                             "text": "Mark Zuckerberg ",
                             "userID" : "user5",
+                            "phone" : "097-123-2134",
                             "leaf": true
                         },
                            {
@@ -66,9 +71,10 @@
                             "lastName": "Moskovitz",
                             "email": "virtualdom@facabookinc.com",
                             "age": "12",
-                            "birthDay": "I/have/noIdea",
+                            "birthDay": "1999-01-21",
                             "text": "Dustin Moskovitz",
                              "userID" : "user6",
+                             "phone" : "097-123-1534",
                             "leaf": true
                         }
                     ]
@@ -82,9 +88,10 @@
                             "lastName": "Williams",
                             "email": "evanshmevan@twit.com",
                             "age": "11",
-                            "birthDay": "I/have/noIdea",
+                            "birthDay": "1993-05-01",
                             "text": "Evan Williams",
                              "userID" : "user7",
+                             "phone" : "097-123-2134",
                             "leaf": true
                         },
                         {   
@@ -92,18 +99,20 @@
                             "lastName": "Glass",
                             "email": "stealballs@twit.com",
                             "age": "9",
-                            "birthDay": "I/have/noIdea",
+                            "birthDay": "1993-02-01",
                             "text": "Noah Glass",
                              "userID" : "user8",
+                             "phone" : "097-123-2134",
                             "leaf": true
                         },{ 
                             "firstName": "Biz",
                             "lastName": "Stone",
                             "email": "stoneinpans@twit.com",
                             "age": "9",
-                            "birthDay": "I/have/noIdea",
+                            "birthDay": "2001-05-07",
                             "text": "Biz Stone",
                             "userID" : "user9",
+                            "phone" : "097-123-2134",
                             "leaf": true
                         }
                     ]

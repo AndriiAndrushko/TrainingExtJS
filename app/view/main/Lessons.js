@@ -30,7 +30,7 @@ Ext.define('Application.view.main.Lessons', {
     buttons: [
     {
 	    text:"Select All ",
-	    handler: 'selsectAllButton',
+	    handler: 'selectAllButton',
 	    flex: 0.1
 	 },{
 	    text:"Unselsect All",
@@ -38,7 +38,7 @@ Ext.define('Application.view.main.Lessons', {
 	     	flex: 0.1
 	},{
 	    text:"Inverse",
-	    handler: 'inverseSelections',
+	    handler: 'inverseSelectionsButton',
 	     	flex: 0.1
 	}],
 	columns: [
