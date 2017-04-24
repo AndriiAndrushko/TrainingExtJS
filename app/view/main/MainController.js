@@ -198,6 +198,8 @@ Ext.define('Application.view.main.MainController', {
             this.storeTreeMark();
             this.getView().query('main-lessons')[0].getStore().filter('userID',userID);
             }
+           
         }
+ 
 
   });
